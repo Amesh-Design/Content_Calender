@@ -4,7 +4,6 @@ import "react-calendar/dist/Calendar.css";
 import "./CalendarStyles.css";
 import EventForm from "./EventForm";
 
-// const baseUrl = "http://192.168.31.26:5000";
 const baseUrl = "http://localhost:5000";
 
 const holidayMap = {
@@ -62,7 +61,7 @@ function App() {
 
     setSelectedDate(date);
     setLastTap(now);
-    setResult(true);
+    setResult((pre) => !pre);
 
     if (doubleTap) {
       fetchHoliday(date);
@@ -176,11 +175,12 @@ function App() {
       <h2
         style={{
           textAlign: "center",
+          fontSize: "30px",
           justifyContent: "center",
           color: "#1976d2",
         }}
       >
-        Calendar
+        Content Generation Calendar
       </h2>
 
       <Calendar

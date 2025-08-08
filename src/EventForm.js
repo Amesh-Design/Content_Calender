@@ -22,6 +22,24 @@ function EventForm({ selectedDate , onComplete }) {
 
   const navigate = useNavigate();
 
+    const downloadImage = async () => {
+    const imageUrl = baseUrl + result.content.imageUrl;
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `holiday-${formateddate.jpg}`; // adjust extension if needed
+      a.click();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Download failed:", err);
+      alert("Failed to download image.");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !description || !selectedDate) {
@@ -77,6 +95,21 @@ function EventForm({ selectedDate , onComplete }) {
           alt="Generated"
           style={{ width: "100%", maxHeight: "400px", objectFit: "contain" }}
         />
+          <div style={{ marginTop: "10px" }}>
+          <button
+            onClick={downloadImage}
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#4caf50",
+              color: "#fff",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+            }}
+          >
+            ⬇️ Download Image
+          </button>
+        </div>
         <p style={{ fontSize: "16px", marginTop: "10px" }}>
           {result.content.text}
         </p>
