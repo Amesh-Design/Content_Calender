@@ -1,0 +1,54 @@
+/* EventForm styles */
+.event-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+}
+
+.event-form-container h2 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 24px;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.event-form input,
+.event-form textarea {
+  font-size: 1.1rem;
+  padding: 12px;
+  border: 1px solid #b0bec5;
+  border-radius: 40px;
+  background: #f4f6f9;
+  transition: border 0.2s;
+}
+
+.event-form input:focus,
+.event-form textarea:focus {
+  border: 1.5px solid #1976d2;
+  outline: none;
+  background: #e3f2fd;
+}
+
+.event-form button[type="submit"] {
+  padding: 12px 0;
+  background: #1976d2;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.event-form button[type="submit"]:hover {
+  background: #125ea6;
+}

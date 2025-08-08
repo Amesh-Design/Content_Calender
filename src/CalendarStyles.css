@@ -1,0 +1,121 @@
+/* Fullscreen center alignment */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f4f6f9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card container that is square */
+.calendar-container {
+  width: 100vw;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  background-color: #e5e9eb;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  overflow: auto;
+}
+
+/* Example: Make calendar grid and cells bigger */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  font-size: 2rem; /* Make numbers/days bigger */
+}
+
+.calendar-cell {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.react-calendar {
+  width: 100% !important;
+  max-width: 520px;
+  min-width: 350px;
+  background: none;
+  border: none;
+  font-size: 2.2rem !important;
+  margin: 0 auto;
+}
+
+.react-calendar__month-view__days {
+  gap: 12px !important; /* Adjust gap as needed */
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+
+.react-calendar__tile {
+  height: 70px !important;
+  font-size: 2rem !important;
+  border-radius: 70px !important;
+  padding: 0 !important;
+}
+
+.react-calendar__navigation button {
+  font-size: 2rem !important;
+  padding: 12px 0 !important;
+}
+
+/* Calendar heading */
+.calendar-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Highlighted holidays */
+.highlight {
+  background-color: #ffdd57 !important;
+  border-radius: 50% !important;
+  color: black !important;
+  font-weight: bold;
+  padding: 8px;
+}
+
+/* Holiday text below calendar */
+.holiday-box {
+  margin-top: 20px;
+  padding: 12px;
+  background: #e3f2fd;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.holiday-item {
+  margin: 6px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive image on content view */
+img {
+  border-radius: 10px;
+}
+
+/* Button in content view */
+button {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+
+
